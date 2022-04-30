@@ -1,19 +1,43 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+// Modules
+import { useEffect, useState } from "react";
+import axios from "axios";
+// Styling
+import "./App.css";
+import { FetchedDataDisplay } from "./components/FetchedDataDisplay";
+// Components
 
-// API call
-const api = {
-  key: "44082ee5fdfb89d4da8cad9697c38e7f",
-  url: "https://api.openweathermap.org/data/2.5/weather"
-}
+// console.log(url);
 
-function App() {
+const App = () => {
+  const date = () => {
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Satuday",
+      "Sunday",
+    ];
+  };
 
-  const date = (e) => {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuday", "Sunday"];
-  }
-  
+  const [cityName, setCityName] = useState("");
+  const [shouldFetch, setShouldFetch] = useState(false);
+  console.log(date);
 
   return (
     <div className="App">
@@ -21,12 +45,25 @@ function App() {
 
       {/* Search bar to grab user location */}
       <input
-      type="text"
-      className="search-bar"
-      placeholder="Select location..."
+        type="text"
+        className="search-bar"
+        placeholder="Select location..."
+        value={cityName}
+        onChange={(event) => {
+          setCityName(event.target.value);
+        }}
       />
+      <button
+        onClick={() => {
+          setShouldFetch(true);
+        }}
+        disabled={!cityName}
+      >
+        fetch
+      </button>
+      {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
     </div>
   );
-}
+};
 
 export default App;
