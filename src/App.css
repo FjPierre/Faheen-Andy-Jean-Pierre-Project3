@@ -1,18 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400;1,700&display=swap');
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-size: 125%;
+}
+
 .App {
   text-align: center;
   background: url("../assets/weather-image.jpg");
   background-size: cover;
   height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
 }
+
 
 h1 {
     margin: 0;
-    padding: 150px 50px 50px;
+    padding: 100px 0 50px 0;
+    font-size: 3rem;
+}
+
+h1,
+h2 {
+  font-style: italic;
+}
+
+h1,
+p {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.2rem;
 }
 
 input {
   padding: 15px;
-  font-size: 1.6rem;
 }
 
 .buttonContainer {
@@ -21,10 +45,15 @@ input {
 
 button {
 padding: 10px 15px;
-font-size: 1.2rem;
 background-color: white;
 color: black;
 border: 2px solid black;
+}
+
+input,
+button,
+p {
+  font-size: 1rem;
 }
 
 button:hover,
@@ -36,34 +65,49 @@ button:focus {
 
 }
 
-.temperatureContainer,
-footer {
-  background: rgba(0,0,0,) transparent;
-}
-
 .temperatureContainer {
   width: 50%;
   margin: 15px auto;
-  border: 1px solid black;
-  /* color: black; */
-  /* opacity: 0.5; */
+  padding: 10px;
+  border: 2px solid black;
 }
 
 .temperatureContainer p {
   color: white;
 }
 
+footer {
+  background-color: #accede;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 0;
+  width: 100%;
+}
 
-/* footer {
-  margin-top: 20%;
-  border-top: 2px solid black;
-} */
 a {
   text-decoration: none;
-  color: black;
+  border-bottom: 2px solid black;
 }
 
 a:hover,
 a:focus {
-  border: 2px solid white;
+  color: white;
+}
+
+h4,
+a {
+  color: black;
+  font-size: 0.8rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+/* Media Queries */
+
+@media (max-width: 403px) {
+  h1 {
+    padding: 50px 0;
+  }
 }

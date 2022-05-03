@@ -39,6 +39,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Welcome to the weather app</h1>
+      <h2>Get the right temperature and dress according to the weather:</h2>
 
       {/* Search bar to grab user location */}
       <form
@@ -66,9 +67,9 @@ const App = () => {
       </form>
       <footer className="footer">
         <h4>
-          Developed by: <a href="https://www.developedbyfj.com/">FJ</a> and
-          powered by:{" "}
-          <a href="https://openweathermap.org/">The Open weather API</a>
+          Created at <a href="https://junocollege.com/">Juno College</a> &
+          developed by
+          <a href="https://www.developedbyfj.com/"> FJ</a>.
         </h4>
       </footer>
     </div>
