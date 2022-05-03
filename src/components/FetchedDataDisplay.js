@@ -10,12 +10,25 @@ export function FetchedDataDisplay({ cityName }) {
 
   const { temperature, fullName } = getWeatherDetails(weatherData);
   return (
-    <div>{weatherData ? JSON.stringify({ temperature, fullName }) : null}</div>
+    // <div>{weatherData ? JSON.stringify({ temperature, fullName }) : null}</div>
+    <div className="temperatureContainer">
+      <p>
+        The temperature today in {fullName} is {temperature} ℃
+      </p>
+    </div>
   );
 }
+
 function getWeatherDetails(weatherData) {
-  return {
-    temperature: weatherData.main.temp,
-    fullName: weatherData.name,
-  };
+  if (weatherData !== null) {
+    return {
+      temperature: weatherData.main.temp,
+      fullName: weatherData.name,
+    };
+  } else {
+    return {
+      temperature: null,
+      fullName: null,
+    };
+  }
 }

@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 // Styling
 import "./App.css";
-import { FetchedDataDisplay } from "./components/FetchedDataDisplay";
 // Components
-
-// console.log(url);
+import { FetchedDataDisplay } from "./components/FetchedDataDisplay";
 
 const App = () => {
   const date = () => {
@@ -37,31 +35,42 @@ const App = () => {
 
   const [cityName, setCityName] = useState("");
   const [shouldFetch, setShouldFetch] = useState(false);
-  console.log(date);
 
   return (
     <div className="App">
       <h1>Welcome to the weather app</h1>
 
       {/* Search bar to grab user location */}
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Select location..."
-        value={cityName}
-        onChange={(event) => {
-          setCityName(event.target.value);
+      <form
+        action=""
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (cityName) {
+            setShouldFetch(true);
+          }
         }}
-      />
-      <button
-        onClick={() => {
-          setShouldFetch(true);
-        }}
-        disabled={!cityName}
       >
-        fetch
-      </button>
-      {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Select location..."
+          value={cityName}
+          onChange={(event) => {
+            setCityName(event.target.value);
+          }}
+        />
+        <div className="buttonContainer">
+          <button>Get the weather</button>
+          {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
+        </div>
+      </form>
+      <footer className="footer">
+        <h4>
+          Developed by: <a href="https://www.developedbyfj.com/">FJ</a> and
+          powered by:{" "}
+          <a href="https://openweathermap.org/">The Open weather API</a>
+        </h4>
+      </footer>
     </div>
   );
 };

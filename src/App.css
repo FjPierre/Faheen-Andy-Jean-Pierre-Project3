@@ -14,3 +14,56 @@ input {
   padding: 15px;
   font-size: 1.6rem;
 }
+
+.buttonContainer {
+  margin-top: 15px;
+}
+
+button {
+padding: 10px 15px;
+font-size: 1.2rem;
+background-color: white;
+color: black;
+border: 2px solid black;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+
+}
+
+.temperatureContainer,
+footer {
+  background: rgba(0,0,0,) transparent;
+}
+
+.temperatureContainer {
+  width: 50%;
+  margin: 15px auto;
+  border: 1px solid black;
+  /* color: black; */
+  /* opacity: 0.5; */
+}
+
+.temperatureContainer p {
+  color: white;
+}
+
+
+/* footer {
+  margin-top: 20%;
+  border-top: 2px solid black;
+} */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover,
+a:focus {
+  border: 2px solid white;
+}

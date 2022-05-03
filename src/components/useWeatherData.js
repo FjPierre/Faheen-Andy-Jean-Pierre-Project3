@@ -16,13 +16,13 @@ export function useWeatherData(cityName) {
 
       const resp = await fetch(url);
       const data = await resp.json();
-      console.log("🚀 ~ file: App.js ~ line 33 ~ useMount ~ data", data);
+      // console.log("🚀 ~ file: App.js ~ line 33 ~ useMount ~ data", data);
 
       const { lat, lon } = data[0] ?? { lat: null, lon: null };
-      console.log("🚀 ~ file: App.js ~ line 36 ~ useMount ~ {lat,lon}", {
-        lat,
-        lon,
-      });
+      // console.log("🚀 ~ file: App.js ~ line 36 ~ useMount ~ {lat,lon}", {
+      //   lat,
+      //   lon,
+      // });
 
       if (!lon) {
         console.warn("OH NO no coords found");
@@ -33,6 +33,7 @@ export function useWeatherData(cityName) {
         `${api.url}?lat=${lat}&lon=${lon}&appid=${api.key}&units=metric`
       );
       const weatherRespData = await weatherResp.json();
+      console.log("data", weatherRespData);
       setWeatherData(weatherRespData);
     })();
   });
