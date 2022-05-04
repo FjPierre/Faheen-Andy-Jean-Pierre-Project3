@@ -37,5 +37,6 @@ export function useWeatherData(cityName) {
 }
 
 function useMount(cb) {
+  // eslint-disable-next-line
   return useEffect(cb, []);
 }
