@@ -73,18 +73,19 @@ button:focus {
   color: white;
   background-color: black;
   border: 2px solid white;
-
 }
 
 .temperatureContainer {
   width: 50%;
   margin: 15px auto;
   padding: 10px;
+  background-color: #b0d1e5;
   border: 2px solid black;
+  border-radius: 15px;
 }
 
 .temperatureContainer p {
-  color: white;
+  color: black;
 }
 
 footer {

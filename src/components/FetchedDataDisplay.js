@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { useWeatherData } from "./useWeatherData";
 
 export function FetchedDataDisplay({ cityName }) {
   const weatherData = useWeatherData(cityName);
 
+  // fullName = City name
   const { temperature, fullName } = getWeatherDetails(weatherData);
   return (
     <div className="temperatureContainer">
