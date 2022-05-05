@@ -13,7 +13,7 @@ export function useWeatherData(cityName) {
   useMount(() => {
     (async () => {
       // 1. get the coordinates of the city
-      const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${api.key}`;
+      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${api.key}`;
 
       const resp = await fetch(url);
       const data = await resp.json();
