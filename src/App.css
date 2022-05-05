@@ -20,7 +20,6 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
   text-align: center;
   background: url("../assets/weather-image.jpg");
   background-size: cover;
-  height: 100vh;
   position: relative;
   padding-bottom: 100px;
 }
@@ -48,11 +47,12 @@ h2 {
 
 input {
   padding: 15px;
+  margin-bottom: 0;
 }
 
-.buttonContainer {
+/* .buttonContainer {
   margin-top: 15px;
-}
+} */
 
 button {
 padding: 10px 15px;
