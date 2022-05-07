@@ -21,11 +21,10 @@ export function UseWeatherData(cityName) {
       const { lat, lon } = data[0] ?? { lat: null, lon: null };
 
       if (!lon) {
-        console.warn("OH NO no coords found");
+        return "OH NO no coords found";
       }
 
       // 2. use these coords to fetch the weather data
-      // https://openweathermap.org/current
       const weatherResp = await fetch(
         `${api.url}?lat=${lat}&lon=${lon}&appid=${api.key}&units=metric`
       );
