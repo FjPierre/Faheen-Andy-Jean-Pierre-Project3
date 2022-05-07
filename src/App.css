@@ -30,6 +30,7 @@ h1 {
     margin: 0;
     padding: 100px 0 50px 0;
     font-size: 3rem;
+    /* flex-wrap: wrap; */
 }
 
 h1,
@@ -73,7 +74,7 @@ button:focus {
 }
 
 .temperatureContainer {
-  width: 50%;
+  width: 75%;
   margin: 15px auto;
   padding: 10px;
   background-color: #b0d1e5;
@@ -116,14 +117,17 @@ h4 {
 
 /* Media Queries */
 
-@media (max-width: 403px) {
+@media (max-width: 706px) {
   h1 {
     padding: 10px 0 5px 0;
   }
 }
 
 @media (max-width: 388px) {
+  /* h1 {
+      padding: 10px 0 5px 0;
+    }
   .temperatureContainer {
     width: 100%;
-  }
+  } */
 }

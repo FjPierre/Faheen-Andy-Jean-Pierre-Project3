@@ -13,38 +13,33 @@ const App = () => {
   return (
     <div className="App">
       <main>
-        <header>
-          <h1>Welcome to the weather app</h1>
-        </header>
-        <section>
-          <h2>Get the right temperature and dress according to the weather:</h2>
+        <h1>Welcome to the weather app</h1>
+        <h2>Get the right temperature and dress according to the weather:</h2>
 
-          {/* Search bar to grab user location */}
-          <form
-            action=""
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (cityName) {
-                setShouldFetch(true);
-              }
+        {/* Search bar to grab user location */}
+        <form
+          action=""
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (cityName) {
+              setShouldFetch(true);
+            }
+          }}
+        >
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Select location..."
+            value={cityName}
+            onChange={(handleSearchBarInput) => {
+              setCityName(handleSearchBarInput.target.value);
             }}
-          >
-            <input
-              type="text"
-              className="search-bar"
-              placeholder="Select location..."
-              value={cityName}
-              onChange={(handleSearchBarInput) => {
-                setCityName(handleSearchBarInput.target.value);
-              }}
-            />
-            <div className="buttonContainer">
-              <button>Get the weather</button>
-              {/* {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null} */}
-            </div>
+          />
+          <div className="buttonContainer">
+            <button>Get the weather</button>
             {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
-          </form>
-        </section>
+          </div>
+        </form>
       </main>
       <Footer />
     </div>
