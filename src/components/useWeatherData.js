@@ -6,7 +6,7 @@ const api = {
   url: "https://api.openweathermap.org/data/2.5/weather",
 };
 
-export function UseWeatherData(cityName) {
+export function useWeatherData(cityName) {
   const [weatherData, setWeatherData] = useState(null);
 
   // fetch the weather data on mount and save to state
