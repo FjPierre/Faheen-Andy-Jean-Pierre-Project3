@@ -1,7 +1,7 @@
 import { useWeatherData } from "./useWeatherData";
 
-export function FetchedDataDisplay({ cityName }) {
-  const weatherData = useWeatherData(cityName);
+export function FetchedDataDisplay({ cityName, clearInput }) {
+  const weatherData = useWeatherData(cityName, clearInput);
 
   // fullName = City name
   const { temperature, fullName } = getWeatherDetails(weatherData);

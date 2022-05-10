@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 const App = () => {
   const [cityName, setCityName] = useState("");
   const [shouldFetch, setShouldFetch] = useState(false);
+  const clearInput = () => {
+    setCityName("");
+  };
 
   return (
     <div className="App">
@@ -37,7 +40,9 @@ const App = () => {
           />
           <div className="buttonContainer">
             <button>Get the weather</button>
-            {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
+            {shouldFetch ? (
+              <FetchedDataDisplay {...{ cityName, clearInput }} />
+            ) : null}
           </div>
         </form>
       </main>

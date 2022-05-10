@@ -6,7 +6,7 @@ const api = {
   url: "https://api.openweathermap.org/data/2.5/weather",
 };
 
-export function useWeatherData(cityName) {
+export function useWeatherData(cityName, clearInput) {
   const [weatherData, setWeatherData] = useState(null);
 
   // fetch the weather data on mount and save to state
@@ -30,6 +30,7 @@ export function useWeatherData(cityName) {
       );
       const weatherRespData = await weatherResp.json();
       setWeatherData(weatherRespData);
+      clearInput();
     })();
   });
   return weatherData;
