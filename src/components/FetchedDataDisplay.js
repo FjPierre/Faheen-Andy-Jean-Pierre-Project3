@@ -8,7 +8,7 @@ export function FetchedDataDisplay({ cityName, clearInput }) {
   return (
     <div className="temperatureContainer">
       <p>
-        The temperature today in {fullName} is <span>{temperature}℃ </span>and feels like <span>{feelsLike}ºC.</span>
+        The temperature today in {fullName} is <span>{temperature}ºC </span>and feels like <span>{feelsLike}ºC.</span>
       </p>
     </div>
   );
