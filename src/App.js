@@ -9,6 +9,10 @@ import Footer from "./components/Footer";
 const App = () => {
   const [cityName, setCityName] = useState("");
   const [shouldFetch, setShouldFetch] = useState(false);
+  const [citySearch, setCitySearch] = useState("");
+  // const handleSearchBarInput () => {
+  //   setCityName(handleSearchBarInput.target.value)
+  // }
   const clearInput = () => {
     setCityName("");
   };
@@ -26,22 +30,21 @@ const App = () => {
             e.preventDefault();
             if (cityName) {
               setShouldFetch(true);
-            }
+              setCitySearch(cityName);
+            } 
           }}
         >
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Select location..."
-            value={cityName}
-            onChange={(handleSearchBarInput) => {
-              setCityName(handleSearchBarInput.target.value);
-            }}
+          <input 
+          type="text"
+          className="search-bar"
+          placeholder="Select location..."
+          value={cityName}
+          onChange={(handleSearchBarInput) => setCityName(handleSearchBarInput.target.value)}
           />
           <div className="buttonContainer">
             <button>Get the weather</button>
             {shouldFetch ? (
-              <FetchedDataDisplay {...{ cityName, clearInput }} />
+              <FetchedDataDisplay {...{ cityName, clearInput, citySearch }} />
             ) : null}
           </div>
         </form>

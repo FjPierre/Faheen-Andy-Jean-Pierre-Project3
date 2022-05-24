@@ -6,11 +6,11 @@ const api = {
   url: "https://api.openweathermap.org/data/2.5/weather",
 };
 
-export function useWeatherData(cityName, clearInput) {
+export function useWeatherData(cityName, clearInput, citySearch) {
   const [weatherData, setWeatherData] = useState(null);
 
   // fetch the weather data on mount and save to state
-  useMount(() => {
+  useEffect(() => {
     (async () => {
       // 1. get the coordinates of the city
       const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${api.key}`;
@@ -32,7 +32,7 @@ export function useWeatherData(cityName, clearInput) {
       setWeatherData(weatherRespData);
       clearInput();
     })();
-  });
+  }, [citySearch]);
   return weatherData;
 }
 
