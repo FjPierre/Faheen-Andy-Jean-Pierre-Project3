@@ -36,7 +36,7 @@ export function useWeatherData(cityName, clearInput, citySearch) {
   return weatherData;
 }
 
-function useMount(cb) {
-  // eslint-disable-next-line
-  return useEffect(cb, []);
-}
+// function useMount(cb) {
+//   // eslint-disable-next-line
+//   return useEffect(cb, []);
+// }

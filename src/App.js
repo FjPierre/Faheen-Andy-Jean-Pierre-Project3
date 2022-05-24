@@ -10,9 +10,6 @@ const App = () => {
   const [cityName, setCityName] = useState("");
   const [shouldFetch, setShouldFetch] = useState(false);
   const [citySearch, setCitySearch] = useState("");
-  // const handleSearchBarInput () => {
-  //   setCityName(handleSearchBarInput.target.value)
-  // }
   const clearInput = () => {
     setCityName("");
   };
