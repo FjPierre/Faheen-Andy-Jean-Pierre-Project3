@@ -9,6 +9,10 @@ import Footer from "./components/Footer";
 const App = () => {
   const [cityName, setCityName] = useState("");
   const [shouldFetch, setShouldFetch] = useState(false);
+  const [citySearch, setCitySearch] = useState("");
+  const clearInput = () => {
+    setCityName("");
+  };
 
   return (
     <div className="App">
@@ -23,32 +27,26 @@ const App = () => {
             e.preventDefault();
             if (cityName) {
               setShouldFetch(true);
-            }
+              setCitySearch(cityName);
+            } 
           }}
         >
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Select location..."
-            value={cityName}
-            onChange={(handleSearchBarInput) => {
-              setCityName(handleSearchBarInput.target.value);
-            }}
+          <input 
+          type="text"
+          className="search-bar"
+          placeholder="Select location..."
+          value={cityName}
+          onChange={(handleSearchBarInput) => setCityName(handleSearchBarInput.target.value)}
           />
           <div className="buttonContainer">
             <button>Get the weather</button>
-            {shouldFetch ? <FetchedDataDisplay {...{ cityName }} /> : null}
+            {shouldFetch ? (
+              <FetchedDataDisplay {...{ cityName, clearInput, citySearch }} />
+            ) : null}
           </div>
         </form>
       </main>
       <Footer />
-      {/* <footer className="footer">
-        <h4>
-          Created at <a href="https://junocollege.com/">Juno College</a> &
-          developed by
-          <a href="https://www.developedbyfj.com/"> FJ</a>.
-        </h4>
-      </footer> */}
     </div>
   );
 };
