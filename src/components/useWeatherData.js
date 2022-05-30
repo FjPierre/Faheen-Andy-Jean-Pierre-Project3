@@ -32,6 +32,7 @@ export function useWeatherData(cityName, clearInput, citySearch) {
       setWeatherData(weatherRespData);
       clearInput();
     })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [citySearch]);
   return weatherData;
 }

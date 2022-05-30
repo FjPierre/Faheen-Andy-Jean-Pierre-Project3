@@ -14,6 +14,8 @@ const App = () => {
     setCityName("");
   };
 
+  // const updateCityName = (inputCityName) => { setCityName(inputCityName) }
+
   return (
     <div className="App">
       <main>
